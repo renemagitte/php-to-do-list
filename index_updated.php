@@ -4,11 +4,12 @@
     require 'partials/head.php';
     require 'partials/insert_task.php';
 
-
     
 ?>
 
 <h1>TO-DO-LIST</h1><p />
+ 
+ <div class="red_box">Din att göra-lista har uppdaterats!</div>
   
 
 <form action="partials/insert_task.php" method="POST">
@@ -33,6 +34,7 @@ require 'partials/todos_incomplete.php';
 <br><br>
 
 <?php
+
 require 'partials/todos_complete.php';  
 ?>
 
@@ -44,6 +46,14 @@ require 'partials/todos_complete.php';
 <?php // }
 ?>
 
+
+<form action="partials/delete_task.php" method="POST">
+    Skriv in titel för att radera post:
+    <input type="text" name="delete_task[]" id="delete_task">
+    
+    <input type="submit" value="submit">
+
+</form>
 
 
 

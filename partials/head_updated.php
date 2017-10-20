@@ -23,6 +23,16 @@
             width: 300px;
             height: 50px;
         }
+        
     </style>
 </head>
 <body>
+
+
+<div class="red_box">Din att göra-lista har uppdaterats!</div>
+
+<?php
+
+require '../index.php';
+    
+?>

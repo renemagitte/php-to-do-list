@@ -1,10 +1,13 @@
 <?php
 
-header("Location: ../index.php");
+header("Location: ../index_updated.php");
 
 // var_dump($_POST);
 
 require "database.php";
+
+
+// if(isset($_POST["title eller vad inputfältet har för name"])){
 
 $statement = $pdo->prepare(
     "INSERT INTO todo (title, completed, createdBy)
@@ -17,6 +20,8 @@ $statement->execute(array(
     ":completed" => $_POST["completed"],
     ":createdBy" => $_POST["createdBy"]
 ));
+
+// }
 
 
 
