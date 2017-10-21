@@ -4,7 +4,7 @@ header("Location: ../index.php");
 
 require "database.php";
 
-var_dump($_GET);
+
 
 //$statement = $pdo‐>prepare(
 //    "DELETE FROM todo WHERE id = :id"
@@ -31,7 +31,7 @@ if(isset($_POST['check'])){
     }
 }
 
-
+var_dump($_POST);
 
 ?>
 

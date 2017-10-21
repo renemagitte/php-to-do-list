@@ -1,27 +1,24 @@
 <?php
-
-header("Location: ../index_updated.php");
+header("Location: ../index.php");
 
 // var_dump($_POST);
 
 require "database.php";
 
 
-// if(isset($_POST["title eller vad inputfältet har för name"])){
-
+    
 $statement = $pdo->prepare(
-    "INSERT INTO todo (title, completed, createdBy)
-    VALUES (:title, :completed, :createdBy)"
-    // "SELECT * FROM todo"
+    "INSERT INTO todo (title, createdBy) 
+    VALUES (:title, :createdBy)"
 );
 
 $statement->execute(array(
     ":title" => $_POST["title"],
-    ":completed" => $_POST["completed"],
     ":createdBy" => $_POST["createdBy"]
 ));
+    
 
-// }
+
 
 
 

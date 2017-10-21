@@ -13,38 +13,27 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-foreach($todo as $todo_task){ 
-            if($todo_task["completed"]){  
+foreach($todo as $do_this){ 
+            if($do_this["completed"]){  
                 ?>
                 
-                <form action="partials/delete_task.php" method="post">
+                <form action="partials/delete_done.php" method="post">
    
+               <!--
                 <input type="checkbox" name="check" value="<?= $todo_task["id"]; ?>">
-                <input type="submit" value="Ta bort" name="name">
-
-                </form>
+            -->
+               
+                <input type="checkbox" name="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
                     
                 <?php    
-                echo ":)   ";
-                echo $todo_task["title"] . ' ';       
-                echo $todo_task["createdBy"]; 
-                ?>
-                
-                <!--
-                <form action="partials/delete_task.php" method="POST">
-                <input type="hidden" 
-                    name="title" 
-                    value="<?php $todo_task["id"]; ?>">
-
-                <input type="submit" value="delete">
-                </form>
-                -->
-                
-                <a href="partials/delete_task.php?id=<?= $todo_task["id"] ?>">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                </a><br>
-            <?php
+                // echo ":)   ";
+                echo $do_this["title"] . ' ';       
+                echo $do_this["createdBy"] . '<br />'; 
             }       
-}
-
+} 
 ?>
+
+                <input type="submit" value="Ta bort" name="delete">
+
+                </form>
+

@@ -9,29 +9,50 @@ $statement->execute();
 
 $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+?>
 
 
-foreach($todo as $todo_task){ 
-            if(!($todo_task["completed"])){
+                <div class="columns_all">
                 
+                <div class="list_title">
+                    Ogjort:
+                </div>
+                <div class="clear"></div>
+                
+<?php
+
+foreach($todo as $do_this){ 
+            if(!($do_this["completed"])){
                 ?>
                 
-    <!--
-                <form action="partials/check_task.php" method="POST">
-                <input type="text" name="checked" id="$todo_task['id']" >
-                <input type="submit">
+            <form action="partials/delete_done.php" method="post">
                 
-                </form>
-                -->
+                <div class="column1">
+                    <input type="checkbox" name="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
+                </div>
                 
-                <?php
+                <div class="column2">
+                    <?php
+                    // echo ":(   ";
+                    echo $do_this["title"] . ' '; 
+                    ?>
+                </div>
                 
+                <div class="column3">
+                   Skapad av: 
+                    <?php
+                    echo $do_this["createdBy"] . '<br />'; 
+                    ?>
                 
-                echo ":(   ";
-                echo $todo_task["title"] . ' ';       
-                echo $todo_task["createdBy"] . '<br />'; 
+                <div class="clear"></div>
+                </div>
+            <?php
             }
-}
-
-
+} 
 ?>
+               <div class="clear"></div>
+        
+                <input type="submit" value="Utförd" name="done">
+
+            </form>
+
