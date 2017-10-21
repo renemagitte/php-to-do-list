@@ -23,9 +23,11 @@
         
         .red_box{
             color: red;
-            border: 1px solid red;
-            width: 300px;
+            width: 100%;
             height: 50px;
+            text-align: center;
+            font-family: 'League Script', cursive;
+            font-size: 1.4em;
         }
         
         .button_style_green{
@@ -84,14 +86,23 @@
             
         }
         
+        .list_title a{
+            font-size: 9em;
+            font-family: 'League Script', cursive;
+            color: black;
+            text-decoration: none;
+        }
+        
         .clear{
             clear: both;
         }
         
+        /*
         h1{
             font-size: 9em;
             font-family: 'League Script', cursive;
         }
+        */
 
         .list_items{
             padding: 20px;
@@ -112,18 +123,47 @@
             padding: 5px;
             
         }
-        
+             
         .input_task{
-            width: 82%;
-            float: right;
+            width: 64%;
+            float: left;
             padding: 5px;
-            float: right;
-        }
-        
+        }        
         
         .input_task input[type=text]{
             width: 100%;
+            font-family: 'Inconsolata', monospace;
+            font-size: 0.8em;
         }
+        
+        .input_name2{
+            width: 5%;
+            float: left;
+            font-family: 'League Script', cursive;
+            font-size: 1.3em;
+            padding: 5px;
+            padding-left: 17px;
+        }
+        
+        .input_priority{
+            width: 8%;
+            float: right;
+            font-family: 'League Script', cursive;
+            font-size: 1.3em;
+            padding: 5px;
+/*
+            border: 1px solid red;
+            box-sizing: border-box;
+*/
+            
+        }
+        
+        .input_priority input[type=number]{
+            width: 100%;
+            font-family: 'Inconsolata', monospace;
+            font-size: 0.8em;
+        }
+
 
         
         .input_createdby{
@@ -136,6 +176,19 @@
         
         .input_createdby input[type=text]{
             width: 100%;
+            font-family: 'Inconsolata', monospace;
+            font-size: 0.8em;
+        }
+        
+        .input_name3{
+            width: 18%;
+            
+        }
+        .input_priotest{
+            width: 18%;
+            float: left;
+             padding: 5px;
+            
         }
         
         .input_submit{
@@ -157,30 +210,56 @@
         
         .list_sub_title{
             padding: 20px;
-            width: 100%;
+            width: 65%;
+            float: left;
             font-family: 'Inconsolata', monospace;
             font-size: 1.8em;
-            
+/*            border: 1px solid red;*/
         }
+        
+        .sort{
+            width: 35%;
+            float: right;
+            font-size: 0.8em;
+            font-family: 'Inconsolata', monospace;
+            padding-top: 25px;
+/*
+            border: 1px solid green;
+            
+*/
+        }
+        
         
         .column1{
             width: 5%; 
             float: left;
             padding-left: 15px;
-            /* border: 1px solid red; */
+/*            border: 1px solid red;*/
         }
         
         .column2{
-            width: 65%; 
+            width: 68%; 
             float: left;
             padding-left: 2px;
-            /* border: 1px solid red; */
+/*            border: 1px solid green;*/
         }
         
+
+        .column4{
+            width: 7%; 
+            float: left;
+            font-size: 0.8em;
+            text-align: right;
+/*            border: 1px solid red;*/
+
+        }
+            
+        
+        
         .column3{
-            width: 30%;  
+            width: 20%;  
             float: right;
-            /* border: 1px solid red; */
+/*           border: 1px solid green;*/
             font-size: 0.6em;
             text-align: right;
             padding-right: 20px;
@@ -204,9 +283,26 @@
         }
         
         .button_bottom{
-            width: 100%;
+            width: 15%;
+            float: left;
             text-align: left;
             padding: 10px;
+        }
+        
+
+        
+        .red{
+            color: red;
+        }
+        .orange{
+            color: orange;
+        }
+        .yellow{
+            color: yellow;
+        }
+        
+        .white{
+            color: white;
         }
     </style>
 </head>

@@ -10,13 +10,7 @@
 <div class="list">
         
         <div class="list_title">
-            <a href="index.php">TO-DO-LIST</a>
-            
-            <div class="clear"></div>
-        </div>
-        
-        <div class="red_box">
-           Din lista har uppdaterats!
+            <h1>TO-DO-LIST</h1>
             
             <div class="clear"></div>
         </div>

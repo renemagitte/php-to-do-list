@@ -39,7 +39,22 @@ foreach($todo as $do_this){
                     ?>
                 </div>
                 
+                <div class="column4">
+                <?php
+                   if($do_this["priority"] == 1){
+                        echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
+                    }elseif($do_this["priority"] == 2){
+                         echo '<span class="glyphicon glyphicon-tag orange" aria-hidden="true"></span>';
+                    }elseif($do_this["priority"] == 3){
+                        echo '<span class="glyphicon glyphicon-tag red" aria-hidden="true"></span>';
+                    }elseif($do_this["priority"] == 0){
+                       echo '<span class="glyphicon glyphicon-tag white" aria-hidden="true"></span>';
+                   }
+                ?> 
+                </div>
+                
                 <div class="column3">
+                   Skapad av:
                     <?php
                     echo $do_this["createdBy"] . '<br />'; 
                     ?>

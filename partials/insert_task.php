@@ -1,5 +1,5 @@
 <?php
-header("Location: ../index.php");
+header("Location: ../index_updated.php");
 
 // var_dump($_POST);
 
@@ -8,13 +8,14 @@ require "database.php";
 
     
 $statement = $pdo->prepare(
-    "INSERT INTO todo (title, createdBy) 
-    VALUES (:title, :createdBy)"
+    "INSERT INTO todo (title, createdBy, priority) 
+    VALUES (:title, :createdBy, :priority)"
 );
 
 $statement->execute(array(
     ":title" => $_POST["title"],
-    ":createdBy" => $_POST["createdBy"]
+    ":createdBy" => $_POST["createdBy"],
+    ":priority" => $_POST["priority"]
 ));
     
 

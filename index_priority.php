@@ -10,13 +10,8 @@
 <div class="list">
         
         <div class="list_title">
+            <!-- <h1>TO-DO-LIST</h1> -->
             <a href="index.php">TO-DO-LIST</a>
-            
-            <div class="clear"></div>
-        </div>
-        
-        <div class="red_box">
-           Din lista har uppdaterats!
             
             <div class="clear"></div>
         </div>
@@ -29,6 +24,14 @@
                 </div>
                 <div class="input_task">
                     <input type="text" name="title" id="task">
+                </div>
+                
+                        
+                <div class="input_name2">
+                           Prio:
+                </div>
+                <div class="input_priority">
+                    <input type="number" name="priority" id="priority" placeholder="0-3">
                 </div>
                 
                 <div class="clear"></div>
@@ -44,6 +47,13 @@
                     </button>
                 <div class="clear"></div>
                 </div>
+                               
+<!--
+            <div class="input_name">Prioritet:</div>
+                <div class="input_priority">
+                    <input type="number" name="priority" id="priority" placeholder="0-3">
+                </div>
+-->
                                 <div class="clear"></div>
             
         </form>
@@ -53,12 +63,12 @@
 
         <?php   
 
-        require 'partials/todos_incomplete.php'; 
+        require 'partials/todos_incomplete_priority.php'; 
         ?>
         <br><br>
 
         <?php
-        require 'partials/todos_complete.php';  
+        require 'partials/todos_complete_priority.php';  
         ?>
         
         

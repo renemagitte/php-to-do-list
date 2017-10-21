@@ -3,7 +3,7 @@
 
 require "database.php";
 
-$statement = $pdo->prepare("SELECT * FROM todo ORDER BY id DESC");
+$statement = $pdo->prepare("SELECT * FROM todo ORDER BY priority DESC");
 
 $statement->execute();
 
@@ -22,7 +22,7 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
                     Sortera efter: 
                     <a href="index.php">Senast tillagda</a> | <a href="index_priority.php">Prioritet</a>
                 </div>
-
+                
                 <div class="clear"></div>
                 
 <?php
@@ -44,9 +44,8 @@ foreach($todo as $do_this){
                     ?>
                 </div>
                 
-                
                 <div class="column4">
-                                        <?php
+                    <?php
                    if($do_this["priority"] == 1){
                         echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
                     }elseif($do_this["priority"] == 2){
@@ -58,7 +57,6 @@ foreach($todo as $do_this){
                    }
                 ?> 
                 </div>
-
                 
                 <div class="column3">
                    Skapad av: 
@@ -79,8 +77,6 @@ foreach($todo as $do_this){
                     Utfört <span class="glyphicon glyphicon-ok"></span>
                 </button>
             </div>
-            
-
 
             </form>
 

@@ -1,9 +1,11 @@
 
+
+
 <?php 
 
 require "database.php";
 
-$statement = $pdo->prepare("SELECT * FROM todo ORDER BY id DESC");
+$statement = $pdo->prepare("SELECT * FROM todo ORDER BY id ASC");
 
 $statement->execute();
 
@@ -11,42 +13,34 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-
                 <div class="columns_all">
                 
                 <div class="list_sub_title">
-                    Att göra:
+                    Bravo! Du har redan klarat av att:
                 </div>
-                
-                <div class="sort">
-                    Sortera efter: 
-                    <a href="index.php">Senast tillagda</a> | <a href="index_priority.php">Prioritet</a>
-                </div>
-
                 <div class="clear"></div>
-                
-<?php
 
+
+<?php
 foreach($todo as $do_this){ 
-            if(!($do_this["completed"])){
+            if($do_this["completed"]){  
                 ?>
                 
-            <form action="partials/delete_done.php" method="post">
-                
+                <form action="partials/delete_done.php" method="post">
+   
                 <div class="column1">
                     <input type="checkbox" name="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
                 </div>
                 
-                <div class="column2">
-                    <?php
-                    // echo ":(   ";
-                    echo $do_this["title"] . ' '; 
+                <div class="column2"> 
+                    <?php    
+                    // echo ":)   ";
+                    echo $do_this["title"] . ' ';
                     ?>
                 </div>
                 
-                
                 <div class="column4">
-                                        <?php
+                    <?php
                    if($do_this["priority"] == 1){
                         echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
                     }elseif($do_this["priority"] == 2){
@@ -58,14 +52,12 @@ foreach($todo as $do_this){
                    }
                 ?> 
                 </div>
-
                 
                 <div class="column3">
-                   Skapad av: 
+                   Skapad av:
                     <?php
                     echo $do_this["createdBy"] . '<br />'; 
                     ?>
-                
                 <div class="clear"></div>
                 </div>
             <?php
@@ -73,14 +65,12 @@ foreach($todo as $do_this){
 } 
 ?>
                <div class="clear"></div>
-               
-            <div class="button_bottom">
-                <button type="submit" value="Utförd" name="done" class="button_style_green">
-                    Utfört <span class="glyphicon glyphicon-ok"></span>
-                </button>
-            </div>
-            
 
+               <div class="button_bottom">
+                    <button type="submit" value="Ta bort" name="delete" class="button_style_red">
+                      Ta bort <span class="glyphicon glyphicon-trash"></span> 
+                    </button>
+                </div>
 
-            </form>
+                </form>
 
