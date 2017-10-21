@@ -14,8 +14,8 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="columns_all">
                 
-                <div class="list_title">
-                    Ogjort:
+                <div class="list_sub_title">
+                    Att göra:
                 </div>
                 <div class="clear"></div>
                 
@@ -51,8 +51,12 @@ foreach($todo as $do_this){
 } 
 ?>
                <div class="clear"></div>
-        
-                <input type="submit" value="Utförd" name="done">
+               
+            <div class="button_bottom">
+                <button type="submit" value="Utförd" name="done" class="button_style_green">
+                    Utfört <span class="glyphicon glyphicon-ok"></span>
+                </button>
+            </div>
 
             </form>
 

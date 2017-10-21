@@ -11,29 +11,34 @@
         
         <div class="list_title">
             <h1>TO-DO-LIST</h1>
+            
+            <div class="clear"></div>
         </div>
         
         <div class="list_items">
         <form action="partials/insert_task.php" method="POST">
-           
-            <div class="input_task">
-                Uppgift:
-                <input type="text" name="title" id="task" >
-            </div>
-            
-            <div class="input_createdby">
-                <!-- Verkställd:
-                <input type="text" name="completed" id="completed" >
-                -->
-                Skapad av:
-                <input type="text" name="createdBy" id="createdBy" >
-            </div>
-            
-            <div class="input_submit">
-                <input type="submit">
+        
+                <div class="input_name">
+                           Ny uppgift:
+                </div>
+                <div class="input_task">
+                    <input type="text" name="title" id="task">
+                </div>
                 
                 <div class="clear"></div>
-            </div>
+            
+                <div class="input_name">Skapad av:</div>
+                <div class="input_createdby">
+                    <input type="text" name="createdBy" id="createdBy" >
+                </div>
+        
+                <div class="input_submit">
+                    <button type="submit" class="button_style_blue">
+                    Lägg till   <span class="glyphicon glyphicon-pencil"></span> 
+                    </button>
+                <div class="clear"></div>
+                </div>
+                                <div class="clear"></div>
             
         </form>
         
@@ -54,10 +59,11 @@
         
     </div> <!-- /.list_items -->
 
+<?php    
+require 'partials/footer.php';   
+?>
 
     </div> <!-- /.list -->
 </main>
 
-<?php    
-require 'partials/footer.php';   
-?>
+
