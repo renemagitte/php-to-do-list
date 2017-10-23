@@ -15,7 +15,7 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="columns_all">
                 
-                <div class="list_sub_title">
+                <div class="list_sub_title_2">
                     Bravo! Du har redan klarat av att:
                 </div>
                 <div class="clear"></div>
@@ -41,15 +41,15 @@ foreach($todo as $do_this){
                 
                 <div class="column4">
                 <?php
-                   if($do_this["priority"] == 1){
-                        echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
-                    }elseif($do_this["priority"] == 2){
-                         echo '<span class="glyphicon glyphicon-tag orange" aria-hidden="true"></span>';
-                    }elseif($do_this["priority"] == 3){
-                        echo '<span class="glyphicon glyphicon-tag red" aria-hidden="true"></span>';
-                    }elseif($do_this["priority"] == 0){
+//                   if($do_this["priority"] == 1){
+//                        echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
+//                    }elseif($do_this["priority"] == 2){
+//                         echo '<span class="glyphicon glyphicon-tag orange" aria-hidden="true"></span>';
+//                    }elseif($do_this["priority"] == 3){
+//                        echo '<span class="glyphicon glyphicon-tag red" aria-hidden="true"></span>';
+//                    }elseif($do_this["priority"] == 0){
                        echo '<span class="glyphicon glyphicon-tag white" aria-hidden="true"></span>';
-                   }
+//                   }
                 ?> 
                 </div>
                 
@@ -70,7 +70,11 @@ foreach($todo as $do_this){
                     <button type="submit" value="Ta bort" name="delete" class="button_style_red">
                       Ta bort <span class="glyphicon glyphicon-trash"></span> 
                     </button>
+                    
+                    <div class="clear"></div>
                 </div>
+                
+                <div class="clear"></div>
 
                 </form>
 

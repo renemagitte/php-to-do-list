@@ -6,11 +6,22 @@
     <meta charset="UTF-8">
     <title>TO DO LIST</title>
     
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|League+Script|Noto+Serif|Nunito| Lora|Source+Sans+Pro|Nothing+You+Could+Do|Reenie+Beanie|Inconsolata|Zeyada" rel="stylesheet">
     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="To-do-list">
+    
+    
+
+    
+    <!--
     <style>
+    
     
         body{
             background-image: url("image/cat_background.png");
@@ -223,10 +234,15 @@
             font-size: 0.8em;
             font-family: 'Inconsolata', monospace;
             padding-top: 25px;
+            
 /*
             border: 1px solid green;
             
 */
+        }
+        
+        .sort a{
+            text-decoration: none;
         }
         
         
@@ -305,5 +321,6 @@
             color: white;
         }
     </style>
+    -->
 </head>
 <body>

@@ -20,7 +20,27 @@ foreach ($_POST as $key => $value){
        );
        $statement->execute();
    }
+    
+    // TEST ATT BYTA NAMN
+//    
+//    else if(isset($_POST['edit'])){
+//
+//            $statement = $pdo->prepare(
+//           "UPDATE todo SET title = "$_POST['new_title']" WHERE id = " . $value
+//       );
+//        
+//       $statement->execute(
+//    
+//       ); 
+//        
+//        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+//    
+//        var_dump($_POST);
+    
+    // SLUT PÅ TEST ATT BYTA NAMN
 }
+    
 
 
 ?>
+

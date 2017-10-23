@@ -80,6 +80,26 @@ foreach($todo as $do_this){
                 </button>
             </div>
             
+            <!-- TEST ATT BYTA NAMN: 
+            
+                <div class="input_name">
+                            Byt till:
+                </div>
+                <div class="input_createdby">
+                    <input type="text" name="new_title" id="new_title" value="new_title"> >
+                </div>
+        
+                <div class="input_submit">
+                    <button type="submit" name="edit" class="button_style_blue">
+                    Byt namn   <span class="glyphicon glyphicon-erase"></span> 
+                    </button>
+                    
+                    
+                <div class="clear"></div>
+                
+                </div>
+           slut på TEST ATT BYTA NAMN -->
+            
 
 
             </form>
