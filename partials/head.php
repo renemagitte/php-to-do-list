@@ -11,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|League+Script|Noto+Serif|Nunito| Lora|Source+Sans+Pro|Nothing+You+Could+Do|Reenie+Beanie|Inconsolata|Zeyada" rel="stylesheet">
     
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="To-do-list">

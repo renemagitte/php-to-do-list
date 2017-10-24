@@ -17,7 +17,7 @@
         </div>
         
         <div class="list_items">
-        <form action="partials/insert_task.php" method="POST">
+        <form action="partials/insert_task_checkdouble.php" method="POST">
         
                 <div class="input_name">
                            Ny uppgift:
