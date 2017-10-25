@@ -1,684 +1,238 @@
-        body{
-            background-image: url("../image/cat_background.png");
-            background-repeat: repeat;
-            background-size: 260px;
-            background-color: gray;
-            color: dimgray;
-            
-        }
+.clear{
+    clear: both;
+}
 
-        
-        .red_box{
-            color: red;
-            width: 100%;
-            height: 50px;
-            text-align: center;
-            font-family: 'League Script', cursive;
-            font-size: 1.4em;
-        }
-        
-        .button_style_green{
-            /* border-radius: 5px; */
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 7px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.8em;
-        }
-        
-        .button_style_red{
-            /* border-radius: 5px; */
-            background-color: #f44336;
-            border: none;
-            color: white;
-            padding: 7px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.8em;
-        }
-        
-        .button_style_blue{
-            /* border-radius: 5px; */
-            width: 100%;
-            background-color: #008CBA;
-            border: none;
-            color: white;
-            padding: 7px 5px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.8em;
-        }
-        
-        .list{
-            width: 96%;
-            /* width: 825px;*/
-            margin: 20px auto;
-            padding-right: 25px;
-            padding-left: 25px;
-            background-color: white;
-            border: 1px solid black;
-            
-        }
-        
+body{
+    background-image: url("../image/cat_background.png");
+    background-repeat: repeat;
+    background-size: 260px;
+    background-color: gray;
+    color: dimgray;
+}
+
+.red_box{
+    color: red;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-family: 'League Script', cursive;
+    font-size: 1.4em;
+    }
+
+.list{
+    width: 96%;
+    margin: 20px auto;
+    background-color: white;
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 5px;
+    font-size: 1.2em;
+    font-family: 'Inconsolata', monospace;    
+}
+
         .list_title{
             width: 100%;
             text-align: center;
             padding-top: 5px;
-            
         }
         
         .list_title a{
-            font-size: 7em;
+            font-size: 6em;
             font-family: 'League Script', cursive;
             color: black;
             text-decoration: none;
         }
-        
-        .clear{
-            clear: both;
-        }
-        
-        /*
-        h1{
-            font-size: 9em;
-            font-family: 'League Script', cursive;
-        }
-        */
 
-        .list_items{
-            padding: 20px;
-            padding-top: 5px;
-            font-size: 1.2em;
-            /* font-family: 'Lora', serif; */
-            font-family: 'Inconsolata', monospace;
-            line-height: 175%;
-            padding-left: 40px;
-            padding-right: 40px;
+.button_style{
+    border: none;
+    color: white;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+
+}
+
+.button_bottom{
+    width: 120px;
+    float: left;
+    text-align: left;
+    padding: 10px;
+}
+
+        .button_style_green{
+            @extend .button_style;
+            // width: 100%;
+            background-color: #4CAF50;
         }
-        
-        .input_name{
-            width: 20%;
-            float: left;
-            font-family: 'League Script', cursive;
-            font-size: 1em;
-            padding: 5px;
-            padding-left: 0px;
-            
+
+        .button_style_red{
+            @extend .button_style;
+            // width: 100%;
+            background-color: #f44336;
         }
-             
-        .input_task{
+
+        .button_style_blue{
+            @extend .button_style;
+            // width: 90%;
+            background-color: #008CBA;
+        }
+
+/* ____Smaller screen: insert new task form structure_______________________________________________ */
+
+.insert_task_parent{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.insert_title_forall{
+    padding: 5px;
+    font-family: 'League Script', cursive;
+    font-size: 1em;   
+}
+
+.insert_input_forall{
+        font-family: 'Inconsolata', monospace;
+        font-size: 0.8em;    
+}
+    
+.insert_task{
+    order: 1;
+    width: 20%;
+    height: 40px;
+    @extend .insert_title_forall;
+}
+    
+        .insert_task_input{
+            order: 2;
             width: 80%;
-            float: left;
-            padding: 5px;
-        }        
-        
-        .input_task input[type=text]{
+            height: 40px;
+        }
+
+        .insert_task_input input[type=text]{
             width: 100%;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
+            @extend .insert_input_forall;
         }
-        
-        .input_name2{
-            width: 5%;
-            float: left;
-            font-family: 'League Script', cursive;
-            font-size: 1em;
-            padding: 5px;
-            padding-left: 17px;
-            display: none
-        }
-        
-        .input_priority{
-            width: 8%;
-            float: right;
-            font-family: 'League Script', cursive;
-            font-size: 1.3em;
-            padding: 5px;
-            display: none
-/*
-            border: 1px solid red;
-            box-sizing: border-box;
-*/
-            
-        }
+    
+.insert_prio{
+    order: 5;
+    width: 20%; 
+    height: 40px;
+    @extend .insert_title_forall;
+}
 
-        .input_priority input[type=number]{
-            width: 100%;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
-        }
-
-        .input_name2_small{
-            width: 20%;
-            float: left;
-            font-family: 'League Script', cursive;
-            font-size: 1em;
-            padding: 5px;
-            padding-left: 17px;
-            display: block;
-/*
-            border: 1px solid green;
-            box-sizing: border-box;
-*/
-        }
-                          
-        .input_priority_small{
-            width: 54%;
-            float: left;
-            font-family: 'League Script', cursive;
-            font-size: 1em;
-            padding: 5px;
-            display: block;
-
-/*
-            border: 1px solid red;
-            box-sizing: border-box;
-*/
-
-        }
-
-        .input_priority_small input[type=number]{
-            min-width: 60px;
-            max-width: 60px;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
-        }
-
-        .clear_small{
-            clear: both;
-        }
-
-        .input_createdby{
-            width: 80%;
-            float: left; 
-             padding: 5px;
-            font-family: 'League Script', cursive;
-            font-size: 1.2em;
-        }
-        
-        .input_createdby input[type=text]{
-            width: 100%;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
-        }
-        
-        .input_name3{
-            width: 18%;
-            
-        }
-        .input_priotest{
-            width: 18%;
-            float: left;
-             padding: 5px;
-            
-        }
-        
-        .input_submit{
-            min-width: 80px;
-            float: right;
-            text-align: center;
-            padding-right: 5px;
-
-/*
-            border: 1px solid purple;
-            box-sizing: border-box;
-*/
-
-        }
-        
-        .columns_all{
-            width: 100%;
-            margin: 0px auto;
-        }
-        
-        .list_title{
-            width: 100%;
-            
-        }
-        
-        .list_sub_title{
-            padding: 20px;
-            width: 50%;
-            float: left;
-            font-family: 'Inconsolata', monospace;
-            font-size: 1.8em;
-/*            border: 1px solid red;*/
-        }
-
-        .list_sub_title_2{
-            padding: 20px;
-            margin-top: 20px;
-            width: 100%;
-            float: left;
-            font-family: 'Inconsolata', monospace;
-            font-size: 1.8em;
-/*            border: 1px solid red;*/
-        }
-        
-        .sort{
-            width: 50%;
-            float: right;
-            text-align: right;
-            font-size: 0.6em;
-            font-family: 'Inconsolata', monospace;
-            padding-top: 25px;
-            
-/*
-            border: 1px solid green;
-            
-*/
-        }
-        
-        .sort a{
-            text-decoration: none;
-        }
-        
-        
-        .column1{
+        .insert_prio_input{
+            order: 6;
+            flex-grow: 1;
             width: 10%; 
-            float: left;
-            padding-left: 15px;
-/*            border: 1px solid red;*/
+            height: 40px;
         }
-        
-        .column2{
-            width: 90%; 
-            float: left;
-            padding-left: 2px;
-            font-size: 0.9em;
-/*            border: 1px solid green;*/
-        }
-        
 
-        .column4{
-            width: 15%; 
-            float: left;
-            font-size: 0.8em;
-            text-align: right;
-            padding-right: 10px;
-/*            border: 1px solid red;*/
+        .insert_prio_input input[type=number]{
+            width: 10%;
+            @extend .insert_input_forall;
+        }
+    
+.insert_creator{
+    order: 3;
+    width: 20%; 
+    height: 40px;
+    @extend .insert_title_forall;
+}
 
+        .insert_creator_input{
+            order: 4;
+            width: 80%; 
+            height: 40px;
         }
-            
-        
-        
-        .column3{
-            width: 85%;  
-            float: right;
-/*           border: 1px solid green;*/
-            font-size: 0.6em;
-            text-align: left;
-            padding-left: 10px;
-        }
-        
-        /* input[type=text]{
-            border: none;
-            border-bottom: 1px solid black;
-            background-color: transparent;
-        } */
-        
-        .footer{
+
+        .insert_creator_input input[type=text]{
             width: 100%;
-            text-align: center;
-            margin-top: 30px;
+            @extend .insert_input_forall;
         }
-        
-        .footer a{
-            font-family: 'League Script', cursive;
-            font-size: 1.2em;
-            text-decoration: none;
-        }
-        
-        .button_bottom{
-            /* width: 15%; */
-            min-width: 120px;
-            float: left;
-            text-align: left;
-            padding: 10px;
-        }
-        
-
-        
-        .red{
-            color: red;
-        }
-        .orange{
-            color: orange;
-        }
-        .yellow{
-            color: yellow;
-        }
-        
-        .white{
-            color: white;
-        }
-
-/* _________________________________________________________________________________________________ */
-
-@media screen and (min-width: 990px){
     
-        .input_name{
-        width: 18%;
-        float: left;
-        font-family: 'League Script', cursive;
-        font-size: 1em;
-        padding: 5px;
-        padding-left: 30px;
-
-    }
-    
+.insert_button{
+    order: 7;
+    width: 18%;
+    height: 40px;
+    text-align: right;
 }
 
 
-/* _________________________________________________________________________________________________ */
+/* ____Smaller screen: Listed items structure_________________________________________________________*/
 
-@media screen and (min-width: 1024px){
-    
-            body{
-            background-image: url("../image/cat_background.png");
-            background-repeat: repeat;
-            background-size: 260px;
-            background-color: gray;
-            color: dimgray;
-            
-        }
-        
-        .red_box{
-            color: red;
-            width: 100%;
-            height: 50px;
-            text-align: center;
-            font-family: 'League Script', cursive;
-            font-size: 1.4em;
-        }
-        
-        .button_style_green{
-            /* border-radius: 5px; */
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 7px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.8em;
-        }
-        
-        .button_style_red{
-            /* border-radius: 5px; */
-            background-color: #f44336;
-            border: none;
-            color: white;
-            padding: 7px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.8em;
-        }
-        
-        .button_style_blue{
-            /* border-radius: 5px; */
-            width: 100%;
-            background-color: #008CBA;
-            border: none;
-            color: white;
-            padding: 7px 5px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.8em;
-        }
-        
-        .list{
-            width: 75%;
-            /* width: 825px;*/
-            margin: 20px auto;
-            padding-right: 25px;
-            padding-left: 25px;
-            /* background-image: url("image/paper-texture-cells.jpg");
-            background-repeat: repeat; */
-            background-color: white;
-            
-        }
-        
-        .list_title{
-            width: 100%;
-            text-align: center;
-            padding-top: 5px;
-            
-        }
-        
-        .list_title a{
-            font-size: 9em;
-            font-family: 'League Script', cursive;
-            color: black;
-            text-decoration: none;
-        }
-        
-        .clear{
-            clear: both;
-        }
-        
-        /*
-        h1{
-            font-size: 9em;
-            font-family: 'League Script', cursive;
-        }
-        */
+.list_wrapper{
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 40px;
+    line-height: 175%;
+    font-size: 1em;
+    font-family: 'Inconsolata', monospace;
+}
 
-        .list_items{
-            padding: 20px;
-            padding-top: 5px;
-            font-size: 1.2em;
-            /* font-family: 'Lora', serif; */
-            font-family: 'Inconsolata', monospace;
-            line-height: 175%;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        
-        .input_name{
-            width: 18%;
-            float: left;
-            font-family: 'League Script', cursive;
-            font-size: 1.3em;
-            padding: 5px;
-            padding-left: 30px;
-            
-        }
-             
-        .input_task{
-            width: 64%;
-            float: left;
-            padding: 5px;
-        }        
-        
-        .input_task input[type=text]{
-            width: 100%;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
-        }
-        
-        .input_name2{
-            width: 5%;
-            float: left;
-            font-family: 'League Script', cursive;
-            font-size: 1.3em;
-            padding: 5px;
-            padding-left: 17px;
-            display: block;
-        }
-    
-        .input_name2_small{
-            display: none;
-        }
-                          
-        .input_priority_small{
-            display: none;
-        }
-    
-        .clear_small{
-            display: none;
-        }
-        
-        .input_priority{
-            width: 8%;
-            float: right;
-            font-family: 'League Script', cursive;
-            font-size: 1.3em;
-            padding: 5px;
-            display: block;
-/*
-            border: 1px solid red;
-            box-sizing: border-box;
-*/
-            
-        }
-        
-        .input_priority input[type=number]{
-            width: 100%;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
-        }
+.incomplete_title{
+    margin-top: 20px;
+    padding: 20px;
+    width: 50%;
+    float: left;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.6em;
+}
 
+.complete_title{
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    float: left;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.6em;
+}
+     
+.sort{
+    width: 50%;
+    float: right;
+    text-align: right;
+    font-size: 0.8em;
+    font-family: 'Inconsolata', monospace;
+    padding-top: 45px;
+}
 
-        
-        .input_createdby{
-            width: 64%;
-            float: left; 
-             padding: 5px;
-            font-family: 'League Script', cursive;
-            font-size: 1.2em;
-        }
-        
-        .input_createdby input[type=text]{
-            width: 100%;
-            font-family: 'Inconsolata', monospace;
-            font-size: 0.8em;
-        }
-        
-        .input_name3{
-            width: 18%;
-            
-        }
-        .input_priotest{
-            width: 18%;
-            float: left;
-             padding: 5px;
-            
-        }
-        
-        .input_submit{
-            width: 16%;
-            float: right;
-            text-align: center;
-            padding-right: 5px;
-        }
-        
-        .columns_all{
-            width: 100%;
-            margin: 0px auto;
-        }
-        
-        .list_title{
-            width: 100%;
-            
-        }
-        
-        .list_sub_title{
-            padding: 20px;
-            width: 50%;
-            float: left;
-            font-family: 'Inconsolata', monospace;
-            font-size: 1.8em;
-/*            border: 1px solid red;*/
-        }
-        
-        .sort{
-            width: 50%;
-            float: right;
-            text-align: right;
-            font-size: 0.8em;
-            font-family: 'Inconsolata', monospace;
-            padding-top: 25px;
-            
-/*
-            border: 1px solid green;
-            
-*/
-        }
-        
         .sort a{
             text-decoration: none;
         }
-        
-        
-        .column1{
-            width: 5%; 
-            float: left;
-            padding-left: 15px;
-/*            border: 1px solid red;*/
-        }
-        
-        .column2{
-            width: 68%; 
-            float: left;
-            padding-left: 2px;
-/*            border: 1px solid green;*/
-        }
-        
 
-        .column4{
-            width: 7%; 
-            float: left;
-            font-size: 0.8em;
-            text-align: right;
-/*            border: 1px solid red;*/
+.checkbox_div{
+    width: 7%; 
+    float: left;
+    padding-left: 5px;
+    height: 22px;
+}
 
-        }
-            
-        
-        
-        .column3{
-            width: 20%;  
-            float: right;
-/*           border: 1px solid green;*/
-            font-size: 0.6em;
-            text-align: right;
-            padding-right: 20px;
-        }
-        
-        /* input[type=text]{
-            border: none;
-            border-bottom: 1px solid black;
-            background-color: transparent;
-        } */
-        
-        .footer{
-            width: 100%;
-            text-align: center;
-        }
-        
-        .footer a{
-            font-family: 'League Script', cursive;
-            font-size: 1.2em;
-            text-decoration: none;
-        }
-        
-        .button_bottom{
-            width: 15%;
-            float: left;
-            text-align: left;
-            padding: 10px;
-        }
-        
+.listed_title{
+    width: 93%; 
+    float: left;
+    padding-left: 2px;
+    height: 22px;
+}
 
-        
+.clear_in_small{
+    clear: both;
+    display: block;
+}
+
+.listed_prio{
+    width: 10%; 
+    float: left;
+    font-size: 0.8em;
+    text-align: right;
+    height: 22px;
+}
+
         .red{
             color: red;
         }
@@ -692,7 +246,281 @@
         .white{
             color: white;
         }
+
+.listed_creator{
+    width: 90%;  
+    float: right;
+    font-size: 0.6em;
+    text-align: left;
+    padding-left: 20px;
+    height: 22px;
+}
+
+/* ____Edit title_________________________________________________________*/
+
+.edit{
+    width: 100%;
+}
+
+.edit_title{
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.6em;
+}
+
+.change_from{
+    width: 20%;
+    float: left;
+    @extend .insert_title_forall;
+}
+
+.change_from_input{
+    width: 80%; 
+    float:  right;
+}
+
+        .change_from_input input[type=text]{
+            width: 100%;
+            @extend .insert_input_forall;
+        }
+
+.change_to{
+    width: 20%;
+    float: left;
+    @extend .insert_title_forall;
+    
+}
+
+.change_to_input{
+    width: 80%;
+    float:  right;
+}
+
+        .change_to_input input[type=text]{
+            width: 100%;
+            @extend .insert_input_forall;
+        }
+
+.change_button{
+    width: 100%;
+    height: 40px;
+    text-align: right;
+}
+
+
+/* ____Footer_________________________________________________________*/
+
+.footer{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+    text-align: center;
+}
+
+.footer a{
+    font-family: 'League Script', cursive;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+
+
+/* _________________________________________________________________________________________________ */
+/* _______"BIG" SCREEN_____________________________________________________________________________ */
+/* _________________________________________________________________________________________________ */
+
+
+@media screen and (min-width: 1036px){
+    
+.list{
+    width: 75%;
+}
+    
+.list_title a{
+    font-size: 8em;
+}
     
     
-} 
+/* ____"Big" screen: insert new task form structure_______________________________________________ */
+
+.insert_title_forall_l{
+    padding: 5px;
+    font-family: 'League Script', cursive;
+    font-size: 1.3em;   
+}
+    
+.insert_input_forall_l{
+        width: 100%;
+        font-family: 'Inconsolata', monospace;
+        font-size: 0.8em;    
+}
+    
+.insert_task{
+    order: 1;
+    width: 18%;
+    @extend .insert_title_forall_l;
+}   
+        .insert_task_input{
+            order: 2;
+            width: 64%;
+        }
+
+        .insert_task_input input[type=text]{
+            @extend .insert_input_forall_l;
+        }
+    
+.insert_prio{
+    order: 3;
+    width: 10%; 
+    @extend .insert_title_forall_l;
+}
+    
+        .insert_prio_input{
+            order: 4;
+            width: 8%; 
+        }
+        .insert_prio_input input[type=number]{
+            @extend .insert_input_forall_l;
+        }
+    
+.insert_creator{
+    order: 5;
+    width: 18%; 
+    @extend .insert_title_forall_l;
+}
+    
+        .insert_creator_input{
+            order: 6;
+            width: 64%; 
+        }
+
+        .insert_creator_input input[type=text]{
+            @extend .insert_input_forall_l;
+        }
+    
+.insert_button{
+    order: 7;
+    width: 18%;
+}
+    
+
+    
+    
+/* ____"Big" screen: Listed items structure_________________________________________________________*/
+    
+.list_wrapper{
+    width: 100%;
+    margin: 0px auto;
+}
+
+.incomplete_title{
+    padding: 20px;
+    width: 50%;
+    float: left;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.8em;
+}
+    
+.complete_title{
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    float: left;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.8em;
+}
+    
+.sort{
+    width: 50%;
+    float: right;
+    text-align: right;
+    font-size: 0.8em;
+    font-family: 'Inconsolata', monospace;
+    padding-top: 25px;
+}
+        .sort a{
+            text-decoration: none;
+        }   
+
+.checkbox_div{
+    width: 5%; 
+    float: left;
+    padding-left: 15px;
+    height: 26px;
+}
+
+.listed_title{
+    width: 68%; 
+    float: left;
+    padding-left: 2px;
+    height: 26px;
+}
+    
+.clear_in_small{
+    clear: none;
+}
+
+.listed_prio{
+    width: 7%; 
+    float: left;
+    font-size: 0.8em;
+    text-align: right;
+    height: 26px;
+}
+
+.listed_creator{
+    width: 20%;  
+    float: right;
+    font-size: 0.6em;
+    text-align: right;
+    padding-right: 20px;
+    height: 26px;
+}
+    
+/* ____Edit title_________________________________________________________*/
+
+.change_from{
+    width: 17%;
+    float: left;
+    @extend .insert_title_forall_l;
+}
+
+.change_from_input{
+    width: 83%; 
+    float:  right;
+}
+
+        .change_from_input input[type=text]{
+            width: 100%;
+            @extend .insert_input_forall_l;
+        }
+
+.change_to{
+    width: 17%;
+    float: left;
+    @extend .insert_title_forall_l;
+    
+}
+
+.change_to_input{
+    width: 83%;
+    float:  right;
+}
+
+        .change_to_input input[type=text]{
+            width: 100%;
+            @extend .insert_input_forall_l;
+        }
+
+.change_button{
+    width: 100%;
+    height: 40px;
+    text-align: right;
+}
+ 
+    
+    
+} // End of @media screen and (min-width: 990px)
 

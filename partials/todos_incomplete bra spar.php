@@ -12,9 +12,9 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-        <div class="list_wrapper">
+                <div class="columns_all">
                 
-                <div class="incomplete_title">
+                <div class="list_sub_title">
                     Att göra:
                 </div>
                 
@@ -31,23 +31,21 @@ foreach($todo as $do_this){
             if(!($do_this["completed"])){
                 ?>
                 
-      
             <form action="partials/delete_done.php" method="post">
                 
-                <div class="checkbox_div">   
+                <div class="column1">
                     <input type="checkbox" name="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
                 </div>
                 
-                <div class="listed_title">
+                <div class="column2">
                     <?php
+                    // echo ":(   ";
                     echo $do_this["title"] . ' '; 
                     ?>
                 </div>
                 
-                <div class="clear_in_small"></div>
                 
-                
-                <div class="listed_prio">
+                <div class="column4">
                                         <?php
                    if($do_this["priority"] == 1){
                         echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
@@ -62,7 +60,7 @@ foreach($todo as $do_this){
                 </div>
 
                 
-                <div class="listed_creator">
+                <div class="column3">
                    Skapad av: 
                     <?php
                     echo $do_this["createdBy"] . '<br />'; 
@@ -81,8 +79,28 @@ foreach($todo as $do_this){
                     Utfört <span class="glyphicon glyphicon-ok"></span>
                 </button>
             </div>
+            
+            <!-- TEST ATT BYTA NAMN: 
+            
+                <div class="input_name">
+                            Byt till:
+                </div>
+                <div class="input_createdby">
+                    <input type="text" name="new_title" id="new_title" value="new_title"> >
+                </div>
+        
+                <div class="input_submit">
+                    <button type="submit" name="edit" class="button_style_blue">
+                    Byt namn   <span class="glyphicon glyphicon-erase"></span> 
+                    </button>
+                    
+                    
+                <div class="clear"></div>
+                
+                </div>
+           slut på TEST ATT BYTA NAMN -->
+            
+
 
             </form>
-            
-</div>
 

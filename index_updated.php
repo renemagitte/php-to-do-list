@@ -13,17 +13,24 @@
             <!-- <h1>TO-DO-LIST</h1> -->
             <a href="index.php">TO-DO-LIST</a>
             
+            
+            
             <div class="clear"></div>
         </div>
         
         <div class="red_box">
-           Din lista har uppdaterats!
+           
+            <?php
+                if(isset($_GET["message"])){
+                echo $_GET["message"];  
+                }
+            ?>
             
             <div class="clear"></div>
         </div>
         
         <div class="list_items">
-        <form action="partials/insert_task.php" method="POST">
+        <form action="partials/insert_task_checkdouble.php" method="POST">
         
                 <div class="input_name">
                            Ny uppgift:
@@ -81,22 +88,32 @@
         
         
         <div class="change_name">
+
+           
+                           
+                <div class="list_sub_title_2">
+                    Redigera en punkt på listan:
+                </div>
+                
             <form action="partials/change_name.php" method="POST">  
                 <div class="input_name">
                            Byt från:
                 </div>
                 <div class="input_task">
-                    <input type="text" name="old_title" id="old_title" value="old_title">
+                    <input type="text" name="old_title" id="old_title" value="Skriv in namnet på befintlig titel">
                 </div>
                 
+
                 <div class="clear"></div>
             
                 <div class="input_name">
                             Byt till:
                 </div>
+                
                 <div class="input_createdby">
-                    <input type="text" name="new_title" id="new_title" value="new_title">
+                    <input type="text" name="new_title" id="new_title" value="Skriv in en ny titel">
                 </div>
+
         
                 <div class="input_submit">
                     <button type="submit" class="button_style_blue">
