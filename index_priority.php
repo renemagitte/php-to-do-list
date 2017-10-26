@@ -10,52 +10,68 @@
 <div class="list">
         
         <div class="list_title">
-            <!-- <h1>TO-DO-LIST</h1> -->
             <a href="index.php">TO-DO-LIST</a>
             
             <div class="clear"></div>
         </div>
         
-        <div class="list_items">
-        <form action="partials/insert_task.php" method="POST">
+        <div class="red_box">
+           
+            <?php
+//                if(isset($_GET["message"])){
+//                echo $_GET["message"];  
+//                }
+            
+            if(isset($_GET["message"])){
+                ?>
+                <div class="red_box">
+                <?php
+                if($_GET["message"] == 0){
+                    echo "Ny punkt";
+                }else{
+                    echo "Finns redan";
+                }
+            }
+            ?>
+            
+            <div class="clear"></div>
+        </div>
         
-                <div class="input_name">
+        
+        <form action="partials/insert_task_checkdouble.php" method="POST">
+        <div class="insert_task_parent">
+        
+
+        
+                <div class="insert_task">
                            Ny uppgift:
                 </div>
-                <div class="input_task">
+                <div class="insert_task_input">
                     <input type="text" name="title" id="task">
                 </div>
                 
                         
-                <div class="input_name2">
+                <div class="insert_prio">
                            Prio:
                 </div>
-                <div class="input_priority">
+                <div class="insert_prio_input">
                     <input type="number" name="priority" id="priority" placeholder="0-3">
                 </div>
                 
-                <div class="clear"></div>
+<!--                <div class="clear"></div>-->
             
-                <div class="input_name">Skapad av:</div>
-                <div class="input_createdby">
+                <div class="insert_creator">Skapad av:</div>
+                <div class="insert_creator_input">
                     <input type="text" name="createdBy" id="createdBy" >
                 </div>
         
-                <div class="input_submit">
+                <div class="insert_button">
                     <button type="submit" class="button_style_blue">
                     Lägg till   <span class="glyphicon glyphicon-pencil"></span> 
                     </button>
-                <div class="clear"></div>
                 </div>
-                               
-<!--
-            <div class="input_name">Prioritet:</div>
-                <div class="input_priority">
-                    <input type="number" name="priority" id="priority" placeholder="0-3">
-                </div>
--->
-                                <div class="clear"></div>
-            
+        
+            </div>
         </form>
         
 
@@ -71,37 +87,10 @@
         require 'partials/todos_complete_priority.php';  
         ?>
         
-        
-        <div class="change_name">
-            <form action="partials/change_name.php" method="POST">  
-                            <div class="input_name">
-                           Byt från:
-                </div>
-                <div class="input_task">
-                    <input type="text" name="title" id="task">
-                </div>
-                
-                <div class="clear"></div>
-            
-                <div class="input_name">Byt till:</div>
-                <div class="input_createdby">
-                    <input type="text" name="createdBy" id="createdBy" >
-                </div>
-        
-                <div class="input_submit">
-                    <button type="submit" class="button_style_blue">
-                    Byt namn   <span class="glyphicon glyphicon-erase"></span> 
-                    </button>
-                <div class="clear"></div>
-                </div>
-                                <div class="clear"></div>      
-            
-            </form>
-        </div>
+        <?php
+        require 'partials/change_name_form.php';  
+        ?>
 
-
-        
-    </div> <!-- /.list_items -->
 
 <?php    
 require 'partials/footer.php';   
@@ -109,5 +98,7 @@ require 'partials/footer.php';
 
     </div> <!-- /.list -->
 </main>
+
+
 
 

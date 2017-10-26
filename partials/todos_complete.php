@@ -13,7 +13,7 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-                <div class="list_wrapper">
+                <div class="list_wrapper_complete">
                 
                 <div class="complete_title">
                     Bravo! Du har redan klarat av att:
@@ -34,23 +34,24 @@ foreach($todo as $do_this){
                 
                 <div class="listed_title"> 
                     <?php    
+                    // echo ":)   ";
                     echo $do_this["title"] . ' ';
                     ?>
                 </div>
                 
-                <div class="clear_in_small"></div>
+
                 
                 <div class="listed_prio">
                 <?php
-//                   if($do_this["priority"] == 1){
-//                        echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
-//                    }elseif($do_this["priority"] == 2){
-//                         echo '<span class="glyphicon glyphicon-tag orange" aria-hidden="true"></span>';
-//                    }elseif($do_this["priority"] == 3){
-//                        echo '<span class="glyphicon glyphicon-tag red" aria-hidden="true"></span>';
-//                    }elseif($do_this["priority"] == 0){
+                   if($do_this["priority"] == 1){
+                        echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
+                    }elseif($do_this["priority"] == 2){
+                         echo '<span class="glyphicon glyphicon-tag orange" aria-hidden="true"></span>';
+                    }elseif($do_this["priority"] == 3){
+                        echo '<span class="glyphicon glyphicon-tag red" aria-hidden="true"></span>';
+                    }elseif($do_this["priority"] == 0){
                        echo '<span class="glyphicon glyphicon-tag white" aria-hidden="true"></span>';
-//                   }
+                   }
                 ?> 
                 </div>
                 

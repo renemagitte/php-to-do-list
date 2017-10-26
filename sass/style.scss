@@ -13,20 +13,21 @@ body{
 .red_box{
     color: red;
     width: 100%;
-    height: 50px;
+    height: 40px;
     text-align: center;
     font-family: 'League Script', cursive;
-    font-size: 1.4em;
-    }
+    font-size: 1.2em;
+}
 
 .list{
-    width: 96%;
+    width: 92%;
     margin: 20px auto;
     background-color: white;
-    padding-left: 65px;
-    padding-right: 65px;
+    border: 1px solid black;
+    padding-left: 25px;
+    padding-right: 25px;
     padding-top: 5px;
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: 'Inconsolata', monospace;    
 }
 
@@ -37,7 +38,7 @@ body{
         }
         
         .list_title a{
-            font-size: 6em;
+            font-size: 4em;
             font-family: 'League Script', cursive;
             color: black;
             text-decoration: none;
@@ -88,6 +89,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
 .insert_title_forall{
@@ -103,15 +105,15 @@ body{
     
 .insert_task{
     order: 1;
-    width: 20%;
-    height: 40px;
+    width: 100%;
+    height: 30px;
     @extend .insert_title_forall;
 }
     
         .insert_task_input{
             order: 2;
-            width: 80%;
-            height: 40px;
+            width: 100%;
+            height: 30px;
         }
 
         .insert_task_input input[type=text]{
@@ -121,34 +123,34 @@ body{
     
 .insert_prio{
     order: 5;
-    width: 20%; 
-    height: 40px;
+    width: 10%; 
+    height: 30px;
     @extend .insert_title_forall;
 }
 
         .insert_prio_input{
             order: 6;
             flex-grow: 1;
-            width: 10%; 
-            height: 40px;
+            width: 20%; 
+            height: 30px;
         }
 
         .insert_prio_input input[type=number]{
-            width: 10%;
+            width: 40px;
             @extend .insert_input_forall;
         }
     
 .insert_creator{
     order: 3;
-    width: 20%; 
-    height: 40px;
+    width: 100%; 
+    height: 30px;
     @extend .insert_title_forall;
 }
 
         .insert_creator_input{
             order: 4;
-            width: 80%; 
-            height: 40px;
+            width: 100%; 
+            height: 30px;
         }
 
         .insert_creator_input input[type=text]{
@@ -158,18 +160,29 @@ body{
     
 .insert_button{
     order: 7;
-    width: 18%;
-    height: 40px;
+    width: 40%;
+    height: 30px;
     text-align: right;
 }
 
 
 /* ____Smaller screen: Listed items structure_________________________________________________________*/
 
-.list_wrapper{
+.list_wrapper_incomplete{
     width: 100%;
     margin: 0px auto;
-    margin-top: 40px;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    line-height: 175%;
+    font-size: 1em;
+    font-family: 'Inconsolata', monospace;
+}
+
+.list_wrapper_complete{
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 0px;
+    padding-top: 0px;
     line-height: 175%;
     font-size: 1em;
     font-family: 'Inconsolata', monospace;
@@ -178,15 +191,16 @@ body{
 .incomplete_title{
     margin-top: 20px;
     padding: 20px;
-    width: 50%;
+    width: 45%;
     float: left;
     font-family: 'Inconsolata', monospace;
     font-size: 1.6em;
 }
 
 .complete_title{
-    margin-top: 20px;
+    // margin-top: 20px;
     padding: 20px;
+    padding-top: 0px;
     width: 100%;
     float: left;
     font-family: 'Inconsolata', monospace;
@@ -194,10 +208,10 @@ body{
 }
      
 .sort{
-    width: 50%;
+    width: 55%;
     float: right;
     text-align: right;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-family: 'Inconsolata', monospace;
     padding-top: 45px;
 }
@@ -214,7 +228,7 @@ body{
 }
 
 .listed_title{
-    width: 93%; 
+    width: 83%; 
     float: left;
     padding-left: 2px;
     height: 22px;
@@ -222,15 +236,20 @@ body{
 
 .clear_in_small{
     clear: both;
-    display: block;
+    display: none;
 }
 
 .listed_prio{
     width: 10%; 
-    float: left;
+    float: right;
     font-size: 0.8em;
     text-align: right;
     height: 22px;
+}
+
+.clear_in_xsmall{
+    clear: both;
+    display: block;
 }
 
         .red{
@@ -248,11 +267,11 @@ body{
         }
 
 .listed_creator{
-    width: 90%;  
+    width: 100%;  
     float: right;
-    font-size: 0.6em;
+    font-size: 0.7em;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 10%;
     height: 22px;
 }
 
@@ -321,21 +340,128 @@ body{
 
 .footer a{
     font-family: 'League Script', cursive;
-    font-size: 1.2em;
+    font-size: 22px;
     text-decoration: none;
 }
 
-
-
 /* _________________________________________________________________________________________________ */
-/* _______"BIG" SCREEN_____________________________________________________________________________ */
+/* _______MEDIUM SCREEN_____________________________________________________________________________ */
 /* _________________________________________________________________________________________________ */
 
 
-@media screen and (min-width: 1036px){
+@media screen and (min-width: 750px) and (max-width: 1249px){
+    
+.list{
+    width: 85%;
+    font-size: 1.2em; 
+    padding-left: 65px;
+    padding-right: 65px;
+}
+    
+.list_title a{
+    font-size: 5em;
+}
+    
+/* ____Medium screen: insert new task form structure_______________________________________________ */
+
+.insert_task_parent{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.insert_title_forall_m{
+    padding: 5px;
+    font-family: 'League Script', cursive;
+    font-size: 1em;   
+}
+
+.insert_input_forall_m{
+        font-family: 'Inconsolata', monospace;
+        font-size: 0.8em;    
+}
+    
+.insert_task{
+    order: 1;
+    width: 20%;
+    height: 40px;
+    @extend .insert_title_forall_m;
+}
+    
+        .insert_task_input{
+            order: 2;
+            width: 80%;
+            height: 40px;
+        }
+
+        .insert_task_input input[type=text]{
+            width: 100%;
+            @extend .insert_input_forall_m;
+        }
+    
+.insert_prio{
+    order: 5;
+    width: 20%; 
+    height: 40px;
+    @extend .insert_title_forall_m;
+}
+
+        .insert_prio_input{
+            order: 6;
+            flex-grow: 1;
+            width: 15%; 
+            height: 40px;
+        }
+
+        .insert_prio_input input[type=number]{
+            width: 40px;
+            @extend .insert_input_forall_m;
+        }
+    
+.insert_creator{
+    order: 3;
+    width: 20%; 
+    height: 40px;
+    @extend .insert_title_forall_m;
+}
+
+        .insert_creator_input{
+            order: 4;
+            width: 80%; 
+            height: 40px;
+        }
+
+        .insert_creator_input input[type=text]{
+            width: 100%;
+            @extend .insert_input_forall_m;
+        }
+    
+.insert_button{
+    order: 7;
+    width: 40%;
+    height: 40px;
+    text-align: right;
+}
+
+    
+} // End of @media screen and (min-width: 750px) and (max-width: 1249px)
+
+
+/* _________________________________________________________________________________________________ */
+/* _______BIG SCREEN_____________________________________________________________________________ */
+/* _________________________________________________________________________________________________ */
+
+
+@media screen and (min-width: 1250px){
     
 .list{
     width: 75%;
+    font-size: 1.2em; 
+    padding-left: 65px;
+    padding-right: 65px;
 }
     
 .list_title a{
@@ -343,10 +469,11 @@ body{
 }
     
     
-/* ____"Big" screen: insert new task form structure_______________________________________________ */
+/* ____Big screen: insert new task form structure_______________________________________________ */
 
 .insert_title_forall_l{
     padding: 5px;
+    padding-left: 20px;
     font-family: 'League Script', cursive;
     font-size: 1.3em;   
 }
@@ -408,11 +535,18 @@ body{
 
     
     
-/* ____"Big" screen: Listed items structure_________________________________________________________*/
+/* ____Big screen: Listed items structure_________________________________________________________*/
     
-.list_wrapper{
+.list_wrapper_incomplete{
     width: 100%;
     margin: 0px auto;
+}
+    
+.list_wrapper_complete{
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .incomplete_title{
@@ -424,8 +558,9 @@ body{
 }
     
 .complete_title{
-    margin-top: 20px;
     padding: 20px;
+    margin-top: 0px;
+    padding-top: 0px;
     width: 100%;
     float: left;
     font-family: 'Inconsolata', monospace;
@@ -438,7 +573,7 @@ body{
     text-align: right;
     font-size: 0.8em;
     font-family: 'Inconsolata', monospace;
-    padding-top: 25px;
+    padding-top: 45px;
 }
         .sort a{
             text-decoration: none;
@@ -469,6 +604,11 @@ body{
     text-align: right;
     height: 26px;
 }
+    
+.clear_in_xsmall{
+    clear: both;
+    display: none;
+}
 
 .listed_creator{
     width: 20%;  
@@ -476,6 +616,7 @@ body{
     font-size: 0.6em;
     text-align: right;
     padding-right: 20px;
+    padding-left: 20px;
     height: 26px;
 }
     
@@ -500,8 +641,7 @@ body{
 .change_to{
     width: 17%;
     float: left;
-    @extend .insert_title_forall_l;
-    
+    @extend .insert_title_forall_l;   
 }
 
 .change_to_input{
@@ -522,5 +662,5 @@ body{
  
     
     
-} // End of @media screen and (min-width: 990px)
+} // End of @media screen and (min-width: 1250px)
 

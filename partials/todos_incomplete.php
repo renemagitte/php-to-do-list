@@ -12,7 +12,7 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-        <div class="list_wrapper">
+        <div class="list_wrapper_incomplete">
                 
                 <div class="incomplete_title">
                     Att göra:
@@ -60,6 +60,8 @@ foreach($todo as $do_this){
                    }
                 ?> 
                 </div>
+                
+                <div class="clear_in_xsmall"></div>
 
                 
                 <div class="listed_creator">
@@ -83,6 +85,8 @@ foreach($todo as $do_this){
             </div>
 
             </form>
+            
+                <div class="clear"></div>
             
 </div>
 

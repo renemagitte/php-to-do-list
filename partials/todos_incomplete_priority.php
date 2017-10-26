@@ -12,9 +12,10 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-                <div class="columns_all">
+
+        <div class="list_wrapper_incomplete">
                 
-                <div class="list_sub_title">
+                <div class="incomplete_title">
                     Att göra:
                 </div>
                 
@@ -22,7 +23,7 @@ $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
                     Sortera efter: 
                     <a href="index.php">Senast tillagda</a> | <a href="index_priority.php">Prioritet</a>
                 </div>
-                
+
                 <div class="clear"></div>
                 
 <?php
@@ -31,21 +32,24 @@ foreach($todo as $do_this){
             if(!($do_this["completed"])){
                 ?>
                 
+      
             <form action="partials/delete_done.php" method="post">
                 
-                <div class="column1">
+                <div class="checkbox_div">   
                     <input type="checkbox" name="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
                 </div>
                 
-                <div class="column2">
+                <div class="listed_title">
                     <?php
-                    // echo ":(   ";
                     echo $do_this["title"] . ' '; 
                     ?>
                 </div>
                 
-                <div class="column4">
-                    <?php
+                <div class="clear_in_small"></div>
+                
+                
+                <div class="listed_prio">
+                                        <?php
                    if($do_this["priority"] == 1){
                         echo '<span class="glyphicon glyphicon-tag yellow" aria-hidden="true"></span>';
                     }elseif($do_this["priority"] == 2){
@@ -58,7 +62,10 @@ foreach($todo as $do_this){
                 ?> 
                 </div>
                 
-                <div class="column3">
+                <div class="clear_in_xsmall"></div>
+
+                
+                <div class="listed_creator">
                    Skapad av: 
                     <?php
                     echo $do_this["createdBy"] . '<br />'; 
@@ -79,4 +86,7 @@ foreach($todo as $do_this){
             </div>
 
             </form>
-
+            
+                <div class="clear"></div>
+            
+</div>
